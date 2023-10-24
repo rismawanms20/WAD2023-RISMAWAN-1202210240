@@ -1,4 +1,25 @@
 <?php
+if (isset($_POST['HitungBMI'])){
+    
+    $bmi= 0;
+    $tesr = ($_POST['tinggi_badan']);
+    $berat_badan = ($_POST['berat_badan']);
+    if (empty($tinggi_badan) || empty($berat_badan)) {
+        $error = "Tinggi badan dan berat badan harus diisi untuk menghitung BMI.";
+    }else {
+        $meter = $tinggi_badan / 100;
+        $bmi = $berat_badan / ($meter * $meter);
+        if ($bmi <= 18.4) {
+            $status = "Dibawah Rata-Rata (Underweight)";
+        } elseif ($bmi >= 18.5 && $bmi <= 24.9) {
+            $status = "Normal";
+        } elseif ($bmi >= 25.0 && $bmi <= 39.9) {
+            $status = "Diatas Rata-Rata (Overweight)";
+        } else {
+            $status = "Kategori Obesitas (Obese)";
+        }
+    }
+};
 
 // **********************  1  ************************** 
 // ========== tangkap nilai tinggi_badan dan berat_badan yang ada pada form html
@@ -11,17 +32,6 @@
 // ========== buatkan sebuah perkondisian di mana 
 // tinggi_badan atau $berat_badan tidak boleh kosong nilainya, kalau kosong buatkanlah pesan error
 // silakan taruh code kalian di bawah
-
-
-// **********************  2  ************************** 
-
-
-// **********************  3  ************************** 
-// ========== buatkanlah perkondisian di mana Jika kesalahan Error-nya "empty", 
-// masukkan perhitungan BMI sesuai dengan rumus yang tertera pada jurnal
-// silakan taruh code kalian di bawah
-
-
 // **********************  3  ************************** 
 
 
@@ -56,13 +66,16 @@
                             <input type="number" class="form-control" name="berat_badan" id="berat_badan" placeholder="53">
                             <label for="berat_badan">Berat Badan (KG)</label>
                         </div>
-                        <button type="submit" class="btn btn-primary mb-3 mt-3 w-100">Hitung BMI</button>
+                        <button type="submit" class="btn btn-primary mb-3 mt-3 w-100" name = "hitungBMI">Hitung BMI</button>
                     </form>
 
                     <!--  **********************  4  **************************     -->
                     <!-- Hasilnya perhitungan BMI taruh di sini yaaa!! 😊 -->
                     <!-- silakan taruh code kalian di bawah -->
-                    
+                    <?php if($message_error == ""): ?>                        
+                        <p>Hasil Perhitungan BMI adalah <?= $result; ?></p><br>
+                        <p>Status BMI anda : <?= $status; ?></p>
+                    <?php endif; ?>
                     
                     <!--  **********************  4  **************************     -->
 
@@ -71,7 +84,9 @@
                     <!--  **********************  5  **************************     -->
                     <!-- Hasil pesan error nya taruh di sini yaaa!! 😊  -->
                     <!-- silakan taruh code kalian di bawah -->
-                    
+                    <?php if($message_error != ""): ?>
+                        <p><?= $message_error; ?></p>
+                    <?php endif; ?>
 
                     <!--  **********************  5  **************************     -->
 
