@@ -9,7 +9,7 @@ $berat_badan = isset($_POST['berat_badan'])?$_POST['berat_badan']:"";
 
 // **********************  1  ************************** 
 
-mdmasl
+
 // **********************  2  ************************** 
 // ========== buatkan sebuah perkondisian di mana 
 // tinggi_badan atau $berat_badan tidak boleh kosong nilainya, kalau kosong buatkanlah pesan error
