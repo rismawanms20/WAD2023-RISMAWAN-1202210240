@@ -1,12 +1,17 @@
 <?php 
  
+<<<<<<< HEAD
 // **********************  1  ************************** 
 // ========== tangkap nilai tinggi_badan dan berat_badan yang ada pada form html
 // silakan taruh code kalian di bawah
+=======
+
+>>>>>>> 876f82747a2e4aef33c79e5504ae83178a699ab2
 $tinggi_badan = isset($_POST['tinggi_badan'])?$_POST['tinggi_badan']:"";
 $berat_badan = isset($_POST['berat_badan'])?$_POST['berat_badan']:"";
 
 
+<<<<<<< HEAD
 // **********************  1  ************************** 
 
 
@@ -18,6 +23,13 @@ if (empty($tinggi_badan) || empty($berat_badan)) {
     $error_message = "Tinggi badan dan berat badan harus diisi.";} 
     
 // **********************  3  ************************** 
+=======
+
+if (empty($tinggi_badan) || empty($berat_badan)) {
+    $error_message = "Tinggi badan dan berat badan harus diisi.";} 
+    
+
+>>>>>>> 876f82747a2e4aef33c79e5504ae83178a699ab2
 
 
 else {
@@ -67,9 +79,13 @@ else {
                             <button type="submit" class="btn btn-primary mb-3 mt-3 w-100">Hitung BMI</button>
                         </form>
     
+<<<<<<< HEAD
                         <!--  **********************  4  **************************     -->
                         <!-- Hasilnya perhitungan BMI taruh di sini yaaa!! 😊 -->
                         <!-- silakan taruh code kalian di bawah -->
+=======
+                    
+>>>>>>> 876f82747a2e4aef33c79e5504ae83178a699ab2
                         <?php 
                         if (isset($bmi)) {
                             echo number_format($bmi);
@@ -78,6 +94,7 @@ else {
                         
                         ?>
                         
+<<<<<<< HEAD
                         <!--  **********************  4  **************************     -->
     
     
@@ -85,13 +102,20 @@ else {
                         <!--  **********************  5  **************************     -->
                         <!-- Hasil pesan error nya taruh di sini yaaa!! 😊  -->
                         <!-- silakan taruh code kalian di bawah -->
+=======
+                  
+>>>>>>> 876f82747a2e4aef33c79e5504ae83178a699ab2
                         <?php
                         if (!empty($error_message)){
                             echo ($error_message);
                         }
                         
                         ?>
+<<<<<<< HEAD
                         <!--  **********************  5  **************************     -->
+=======
+                    
+>>>>>>> 876f82747a2e4aef33c79e5504ae83178a699ab2
     
     
                     </div>
@@ -102,4 +126,8 @@ else {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
     
+<<<<<<< HEAD
     </html>
+=======
+    </html>
+>>>>>>> 876f82747a2e4aef33c79e5504ae83178a699ab2
